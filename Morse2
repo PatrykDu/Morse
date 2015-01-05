@@ -1,0 +1,77 @@
+//Przywitanie kola mlodych informatykow (KMI) jezykiem Morse'a
+#include <pitches.h> 
+#define A NOTE_B0
+#define B NOTE_C5
+const int bip = 500;
+
+const int glosnik = 13;
+
+
+void setup() {
+  pinMode (glosnik, OUTPUT);
+
+}
+
+void loop() {
+  H(A);E(B);L(A);L(B);O(A);
+  delay(1000);
+  K(B);M(A);I(B);
+  delay(10000);
+  
+}
+void beep(int note, int duration)
+{
+  //gra na pc speaker
+  tone(glosnik, note /4, duration);
+  
+  //nie gra
+  noTone(glosnik);
+  
+  delay(50);
+   
+}
+void kreska(int bip)
+{
+	beep(bip, 500);
+	delay(50);
+}
+void kropka(int bip)
+{
+	beep(bip, 150);
+	delay(50);
+}
+void H(int bip)
+{
+	kropka(bip);kropka(bip);kropka(bip);kropka(bip);
+	delay(300);
+}
+void E(int bip)
+{
+	kropka(bip);
+	delay(300);
+}
+void L(int bip)
+{
+	kropka(bip);kreska(bip);kropka(bip);kropka(bip);
+	delay(300);
+}
+void O(int bip)
+{
+	kreska(bip);kreska(bip);kreska(bip);
+	delay(300);
+}
+void K(int bip)
+{
+	kreska(bip);kropka(bip);kreska(bip);
+	delay(300);
+}
+void M(int bip)
+{
+	kreska(bip);kreska(bip);
+	delay(300);
+}
+void I(int bip)
+{
+	kropka(bip);kropka(bip);
+	delay(300);
+}
