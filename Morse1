@@ -1,0 +1,112 @@
+//Przywitanie kola mlodych informatykow (KMI) jezykiem Morse'a
+
+const int bip = 500;
+
+const int glosnik = 10;
+
+int counter = 0;
+
+void setup()
+{
+  pinMode(glosnik, OUTPUT);
+  
+}
+
+void loop()
+{
+  //tutaj wstawiam słowo w kodzie morse'a
+  beep(bip, 150); //kropka
+  delay(50);
+  beep(bip, 150); //kropka
+  delay(50);
+  beep(bip, 150); //kropka
+  delay(50);
+  beep(bip, 150); //kropka
+  delay(50);
+  //H
+  
+  delay(300);
+  
+  beep(bip, 150); //kropka
+  delay(50);
+  //E
+  
+  delay(300);
+  
+  beep(bip, 150); //kropka
+  delay(50);
+  beep(bip, 500); //kreska
+  delay(50);
+  beep(bip, 150); //kropka
+  delay(50);
+  beep(bip, 150); //kropka
+  delay(50);
+  //L
+  
+  delay(300);
+  
+  beep(bip, 150); //kropka
+  delay(50);
+  beep(bip, 500); //kreska
+  delay(50);
+  beep(bip, 150); //kropka
+  delay(50);
+  beep(bip, 150); //kropka
+  delay(50);
+  //L
+  
+  delay(300);
+  
+  beep(bip, 500); //kreska
+  delay(50);
+  beep(bip, 500); //kreska
+  delay(50);
+  beep(bip, 500); //kreska
+  delay(50);
+  //O
+  
+  delay(300);
+  delay(1000);
+  
+  beep(bip, 500); //kreska
+  delay(50);
+  beep(bip, 150); //kropka
+  delay(50);
+  beep(bip, 500); //kreska
+  delay(50);
+  //K
+  
+  delay(300);
+  
+  beep(bip, 500); //kreska
+  delay(50);
+  beep(bip, 500); //kreska
+  delay(50);
+  //M
+  
+  delay(300);
+  
+  beep(bip, 150); //kropka
+  delay(50);
+  beep(bip, 150); //kropka
+  delay(50);
+  //I
+  
+  delay(300);
+  delay(1000);
+  
+}
+
+void beep(int note, int duration)
+{
+  //gra na pc speaker
+  tone(glosnik, note /4, duration);
+  
+  //nie gra
+  noTone(glosnik);
+  
+  delay(50);
+  
+  //licznik
+  counter++;
+}
